@@ -1,0 +1,78 @@
+html, body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#main-header {
+  /*border: 1px solid blue;*/
+  text-align: center;
+}
+
+#calendar {
+  /*border: 1px solid green;*/
+  text-align: center;
+}
+
+#weekdays-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+#calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.paginate-btn {
+  height: 33px;
+}
+
+.weekday {
+  height: 80%;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0;
+  border: 1px solid;
+  overflow-y: auto;
+}
+
+.weekday h4 {
+  border-bottom: 1px solid;
+}
+
+#chat {
+  /*border: 1px solid orange;*/
+  text-align: center;
+}
+
+#chat-container {
+  height: 75%;
+  border: 1px solid;
+  overflow-y: auto;
+}
+
+.msg-container {
+  margin: 5px;
+  display: flex;
+  text-align: left;
+}
+
+.user {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+#message-form {
+  margin-top: 5px;
+  width: 80%;
+}
+
+#message {
+  width: 100%;
+}
+
+#message-btn {
+  margin-top: 5px;
+  width: 18.9%;
+}

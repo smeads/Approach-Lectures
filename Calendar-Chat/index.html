@@ -1,0 +1,60 @@
+<html>
+<head>
+  <title>Calendar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="client/styles.css">
+</head>
+<body>
+  <header id=main-header></header>
+  <div class="container-fluid">
+    <div class="row">
+      <section class='col-md-4'id='chat'>
+        <h3>Chat</h3>
+        <div id='chat-container'></div>
+        <form class='form-inline' id='chat-form'>
+          <div class="form-group" id='message-form'>
+            <input type="text" class="form-control" id='message'>
+          </div>
+          <button type="submit" class="btn btn-default" id='message-btn'>Send</button>
+        </form>
+      </section>
+      <section class='col-md-8' id='calendar'>
+        <div id='calendar-header'>
+          <button class="btn btn-default paginate-btn" id='prev-btn'>prev</button>
+          <h3 id='week-dates'>Weekly Schedule</h3>
+          <button class="btn btn-default paginate-btn" id='next-btn'>next</button>
+        </div>
+        <div id='weekdays-container'></div>
+      </section>
+    </div>
+  </div>
+</body>
+<script src="./node_modules/expect/umd/expect.min.js"></script>
+<script src="./node_modules/mocha/mocha.js"></script>
+<script src="./test/polyfill.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+<script src='./client/main.js'></script>
+<script src='./client/chat.js'></script>
+
+<script>
+  // If called from Mocha Phantom-JS on the command line then add the test scripts
+  // to the end of the document.
+  if (window.callPhantom) {
+    mocha.setup('bdd')
+    addScript('./test/online-calendar-test.js');
+    addScript('./test/online-chatroom-test.js');
+    addScript('./test/runMocha.js');
+  }
+
+  function addScript(path) {
+    var js = document.createElement('script');
+    js.type = 'text/javascript';
+    js.src = path;
+    document.body.appendChild(js);
+  }
+</script>
+
+</html>
